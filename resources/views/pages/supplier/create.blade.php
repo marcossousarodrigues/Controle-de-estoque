@@ -2,7 +2,8 @@
 
 @extends('layouts.template')
 
-@section('title', 'Cadatro de Fornecedor')
+@section('title', $title)
+
 @section('content')
     <section class="container">
         <h1>Cadatro de Fornecedor</h1>

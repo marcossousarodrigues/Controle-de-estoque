@@ -2,7 +2,7 @@
 
 @extends('layouts.template')
 
-@section('title', 'Cadatro de Unidade de Medida')
+@section('title', $title)
 @section('content')
     <section class="container">
         <h1>Cadatro de Unidade de Medida</h1>
