@@ -13,29 +13,33 @@
 </head>
 <body>
 
+    @if ( isset($_SESSION['email']))
+ 
     <header>
         <nav>
             <a href="/">Controle de Estoque</a>
             <ul>
                 <li>
-                    <a href="/product">Produto</a>
+                    <a href="{{route('pages.product.page')}}">Produto</a>
                 </li>
                 <li>
-                    <a href="/category">Categoria</a>
+                    <a href="{{route('pages.category.page')}}">Categoria</a>
                 </li>
                 <li>
-                    <a href="/unit">Unidade de Medida</a>
+                    <a href="{{route('pages.unit.page')}}">Unidade de Medida</a>
                 </li>
                 <li>
-                    <a href="/supplier">Fornecedor</a>
+                    <a href="{{route('pages.supplier.page')}}">Fornecedor</a>
                 </li>
                 <li>
-                    <a href="/user">Usuários</a>
+                    <a href="{{route('user.logout')}}">Sair</a>
                 </li>
             </ul>
         </nav>
     </header>
-
+       
+    @endif
+    
     @yield('content')
 
     <footer>

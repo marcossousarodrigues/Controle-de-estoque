@@ -9,18 +9,26 @@ class CategoryController extends Controller
 {
     public function page(Request $request)
     {
-        return view('pages.category.create');
+        $categories = Category::all();
+
+        return view('pages.category.create', ['categories' => $categories]);
     }
 
     public function create(Request $request)
     {
 
-        $request->validate([
-            'name' => 'required',
-            'description' => 'required'
-        ]);
+        $request->validate(
+            [
+                'name' => 'required',
+                'description' => 'required'
+            ],
+            [
+                'name.required' => 'O campo nome é obrigatorio',
+                'description.required' => 'O campo descrição é obrigatorio',
+            ]
+        );
 
-        // Category::create($request->all());
+        Category::create($request->all());
 
     }
 
